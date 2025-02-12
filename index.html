@@ -119,16 +119,18 @@
 
 </body>
 <script>
+const SITE_URL = "https://chop-chop.website.yandexcloud.net"
+
 // Показать кнопку назад
-Telegram.WebApp.BackButton.show();
+// Telegram.WebApp.BackButton.show();
 
-// Отслеживать нажатие на кнопку назад
-Telegram.WebApp.BackButton.onClick(() => {
-  // Переход на предыдущую страницу
-  window.history.back();
-});
+// // Отслеживать нажатие на кнопку назад
+// Telegram.WebApp.BackButton.onClick(() => {
+//   // Переход на предыдущую страницу
+//   window.location.href = SITE_URL;
+// });
 
-// Установить текст для кнопки назад (опционально)
-Telegram.WebApp.BackButton.text = "Назад";
+// // Установить текст для кнопки назад (опционально)
+// Telegram.WebApp.BackButton.text = "Назад";
 </script>
 </html>
