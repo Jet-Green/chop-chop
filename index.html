@@ -1,136 +1,212 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: "Open Sans", sans-serif;
-      background-color: black;
-      padding: 0;
-      margin: 0;
-      min-height: 100vh;
-      /* background-image: url("photo_2024-12-20_16-01-09 (2).jpg"); */
-      background-image: url('photo_2024-12-20_16-19-47.jpg');
-      background-size: cover;
-      background-position: center;
-      /* overflow: hidden; */
-    }
-    @font-face {
-      font-family: "blisspro-medium";
-      src: url("blisspro-medium.otf");
-    }
-    @font-face {
-      font-family: "Reforma Grotesk Demi";
-      src: url("Reforma Grotesk Demi.otf");
-    }
-    .colorful {
-      color: #c05d00;
-    }
-    .logo {
-      max-width: 60vw;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      min-height: 100vh;
-    }
-    .book {
-      border: 0px;
-      border-radius: 20px;
-      padding: 20px;
-      /* background-color: white; */
-    }
-    button {
-      text-decoration: none;
-      /* color: #c05d00; */
-      /* font-weight: 600; */
-      font-size: 25px;
-      transition: 0.2s ease;
-      /* font-family: "blisspro-medium"; */
-      font-family: "Reforma Grotesk Demi", sans-serif;
-      letter-spacing: 1px;
-      color: #c05d00;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: black;
+        padding: 0;
+        margin: 0;
+        min-height: 100vh;
+        /* background-image: url("photo_2024-12-20_16-01-09 (2).jpg"); */
+        background-image: url("photo_2024-12-20_16-19-47.jpg");
+        background-size: cover;
+        background-position: center;
+        /* overflow: hidden; */
+      }
+      @font-face {
+        font-family: "blisspro-medium";
+        src: url("blisspro-medium.otf");
+      }
+      @font-face {
+        font-family: "Reforma Grotesk Demi";
+        src: url("Reforma Grotesk Demi.otf");
+      }
+      .colorful {
+        color: #c05d00;
+      }
+      .logo {
+        max-width: 60vw;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 100vh;
+      }
+      .book {
+        border: 0px;
+        border-radius: 20px;
+        padding: 20px;
+        /* background-color: white; */
+      }
+      button {
+        text-decoration: none;
+        /* color: #c05d00; */
+        /* font-weight: 600; */
+        font-size: 25px;
+        transition: 0.2s ease;
+        /* font-family: "blisspro-medium"; */
+        font-family: "Reforma Grotesk Demi", sans-serif;
+        letter-spacing: 1px;
+        color: #c05d00;
 
-      /* font-weight: bold; */
-    }
-    button:active {
-      transform: scale(0.92);
-    }
-    a {
-      margin-top: 26px;
-      transition: 0.2s ease;
-    }
-    a:active, a:hover  {
-      transform: scale(0.92);
-    }
-    .heading {
-      font-family: "Reforma Grotesk Demi", sans-serif;
+        /* font-weight: bold; */
+      }
+      button:active {
+        transform: scale(0.92);
+      }
+      a {
+        margin-top: 26px;
+        transition: 0.2s ease;
+      }
+      a:active,
+      a:hover {
+        transform: scale(0.92);
+      }
+      .heading {
+        font-family: "Reforma Grotesk Demi", sans-serif;
 
-      font-size: 40px;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      color: white;
-      text-align: center;
-    }
-    .mb {
-      margin-bottom: 20px;
-    }
-    .name-img {
-      max-width: 80vw;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      /* height: 200px; */
-    }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- <span class="heading">Мужская парикмахерская CHOP-CHOP</span> -->
-    <img class="name-img" src="Chop-Chop-Logo_RUS_White-01 (1).png" alt="">
-    <!-- <img class="logo" src="./logo-photoaidcom-cropped.jpg" alt="" /> -->
-    <div class="buttons">
-      <a href="https://n1295303.yclients.com">
-        <button class="book">ЗАПИСАТЬСЯ</button>
-      </a>
+        font-size: 40px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: white;
+        text-align: center;
+      }
+      .mb {
+        margin-bottom: 20px;
+      }
+      .name-img {
+        max-width: 80vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /* height: 200px; */
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .video {
+        height: 150px;
+      }
 
-      <a href="https://b330881.yclients.com/company/603458/select-services?o=">
-        <button class="book">МУЖСКОЙ МАНИКЮР</button>
-      </a>
+      .box {
+        opacity: 1; /* Делаем блоки сразу видимыми */
+        transition: transform 0.5s;
+      }
 
-      <a href="https://o608.yclients.com/loyalty" class="mb">
-        <button class="book">ПОДАРОЧНЫЕ КАРТЫ</button>
-      </a>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        70% {
+          opacity: 0.7;
+          transform: scale(0.97);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <span class="heading">Мужская парикмахерская CHOP-CHOP</span> -->
+      <img class="name-img" src="Chop-Chop-Logo_RUS_White-01 (1).png" alt="" />
+      <!-- <video src="эск1.mp4" loop autoplay class="video"></video> -->
+      <!-- <img class="logo" src="./logo-photoaidcom-cropped.jpg" alt="" /> -->
+      <div class="buttons">
+        <a href="https://n1295303.yclients.com">
+          <button class="box box1 book">ЗАПИСАТЬСЯ</button>
+        </a>
+
+        <a href="https://b330881.yclients.com/company/603458/select-services?o=">
+          <button class="box box2 book">МУЖСКОЙ МАНИКЮР</button>
+        </a>
+
+        <a href="https://o608.yclients.com/loyalty" class="mb">
+          <button class="box box3 book">ПОДАРОЧНЫЕ КАРТЫ</button>
+        </a>
+      </div>
     </div>
-  </div>
-  <!-- <script type="text/javascript" src="https://w1295303.yclients.com/widgetJS" charset="UTF-8"></script> -->
-  <!-- <iframe scrolling="no" frameborder="0" allowtransparency="true" id="ms_booking_iframe" src="https://n1295303.yclients.com"></iframe> -->
+    <!-- <script type="text/javascript" src="https://w1295303.yclients.com/widgetJS" charset="UTF-8"></script> -->
+    <!-- <iframe scrolling="no" frameborder="0" allowtransparency="true" id="ms_booking_iframe" src="https://n1295303.yclients.com"></iframe> -->
+  </body>
+  <script>
+    const SITE_URL = "https://chop-chop.website.yandexcloud.net"
+    // function startAnimation() {
+    //   const boxes = document.querySelectorAll(".box")
+
+    //   boxes.forEach((box, index) => {
+    //     setTimeout(() => {
+    //       box.style.animation = "fadeIn 0.5s forwards"
+    //     }, index * 500)
+    //   })
+
+    //   // Сбрасываем анимацию через 2 секунды (время 3 анимаций + зазор)
+    //   setTimeout(() => {
+    //     boxes.forEach((box) => {
+    //       box.style.animation = "none" // Сброс анимации для повторного запуска
+    //     })
+    //     startAnimation() // Перезапуск анимации
+    //   }, boxes.length * 500 + 500) // Время, через которое анимация будет сброшена и запущена снова
+    // }
 
 
-</body>
-<script>
-const SITE_URL = "https://chop-chop.website.yandexcloud.net"
 
-// Показать кнопку назад
-// Telegram.WebApp.BackButton.show();
+    function startCycleAnimation() {
+      const boxes = document.querySelectorAll(".box")
 
-// // Отслеживать нажатие на кнопку назад
-// Telegram.WebApp.BackButton.onClick(() => {
-//   // Переход на предыдущую страницу
-//   window.location.href = SITE_URL;
-// });
+      // boxes.forEach((box, index) => {
+      //   setTimeout(() => {
+      //     box.style.animation = "fadeIn 0.5s forwards"
+      //   }, index * 500)
+      // })
 
-// // Установить текст для кнопки назад (опционально)
-// Telegram.WebApp.BackButton.text = "Назад";
-</script>
+      let currentIndex = 0
+
+      function animateBox() {
+        const box = boxes[currentIndex]
+
+        box.style.transform = "scale(0.85)" // Уменьшение размера блока
+
+        setTimeout(() => {
+          box.style.transform = "scale(1)" // Увеличение размера блока обратно
+
+          currentIndex = (currentIndex + 1) % boxes.length // Переход на следующий блок
+
+          setTimeout(animateBox, 900) // Задержка перед анимацией следующего блока
+        }, 150) // Время удержания уменьшенного состояния
+      }
+
+      animateBox() // Запускаем анимацию
+    }
+
+    // Автоматически запускаем анимацию при загрузке страницы
+    window.onload = startCycleAnimation
+    // Показать кнопку назад
+    // Telegram.WebApp.BackButton.show();
+
+    // // Отслеживать нажатие на кнопку назад
+    // Telegram.WebApp.BackButton.onClick(() => {
+    //   // Переход на предыдущую страницу
+    //   window.location.href = SITE_URL;
+    // });
+
+    // // Установить текст для кнопки назад (опционально)
+    // Telegram.WebApp.BackButton.text = "Назад";
+  </script>
 </html>
