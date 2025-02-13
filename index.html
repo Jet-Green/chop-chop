@@ -102,8 +102,8 @@
       }
 
       .box {
-        opacity: 1; /* Делаем блоки сразу видимыми */
-        transition: transform 0.5s;
+        opacity: 0; /* Делаем блоки сразу невидимыми */
+        transform: scale(0.8);
       }
 
       @keyframes fadeIn {
@@ -129,12 +129,29 @@
 
       .part1 {
         animation-duration: 0.7s;
-        animation-name: slidein;
+        animation-name: slideinchopchop;
       }
-      
-      @keyframes slidein {
+
+      .part2 {
+        animation-duration: 0.7s;
+        animation-name: slideinpart2;
+      }
+
+      @keyframes slideinchopchop {
         from {
-          opacity: 0.8;
+          opacity: 0.2;
+          transform: scale(0.8);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideinpart2 {
+        from {
+          opacity: 0.2;
           transform: scale(0.8);
         }
 
@@ -150,7 +167,7 @@
       <!-- <span class="heading">Мужская парикмахерская CHOP-CHOP</span> -->
       <div class="name-img-container">
         <img class="name-img part1" src="Chop-Chop-Logo_RUS_White-01 1 part.png" alt="" />
-        <img class="name-img" src="Chop-Chop-Logo_RUS_White-01 2 part.png" alt="" />
+        <img class="name-img part2" src="Chop-Chop-Logo_RUS_White-01 2 part.png" alt="" />
       </div>
       <!-- <video src="эск1.mp4" loop autoplay class="video"></video> -->
       <!-- <img class="logo" src="./logo-photoaidcom-cropped.jpg" alt="" /> -->
@@ -191,7 +208,7 @@
     //   }, boxes.length * 500 + 500) // Время, через которое анимация будет сброшена и запущена снова
     // }
 
-    function startCycleAnimation() {
+    function main() {
       const boxes = document.querySelectorAll(".box")
 
       // boxes.forEach((box, index) => {
@@ -199,6 +216,13 @@
       //     box.style.animation = "fadeIn 0.5s forwards"
       //   }, index * 500)
       // })
+      function startupAnimation() {
+        for (let i = 0; i < boxes.length; i++) {
+          const box = boxes[i]
+          box.style.transform = "scale(1)"
+          box.style.opacity = "1"
+        }
+      }
 
       let currentIndex = 0
 
@@ -212,15 +236,16 @@
 
           currentIndex = (currentIndex + 1) % boxes.length // Переход на следующий блок
 
-          setTimeout(animateBox, 900) // Задержка перед анимацией следующего блока
+          setTimeout(animateBox, 2000) // Задержка перед анимацией следующего блока
         }, 150) // Время удержания уменьшенного состояния
       }
 
-      animateBox() // Запускаем анимацию
+      startupAnimation()
+      setTimeout(animateBox, 3000)
     }
 
     // Автоматически запускаем анимацию при загрузке страницы
-    window.onload = startCycleAnimation
+    window.onload = main
     // Показать кнопку назад
     // Telegram.WebApp.BackButton.show();
 
