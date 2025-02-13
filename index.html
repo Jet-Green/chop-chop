@@ -190,23 +190,6 @@
   </body>
   <script>
     const SITE_URL = "https://chop-chop.website.yandexcloud.net"
-    // function startAnimation() {
-    //   const boxes = document.querySelectorAll(".box")
-
-    //   boxes.forEach((box, index) => {
-    //     setTimeout(() => {
-    //       box.style.animation = "fadeIn 0.5s forwards"
-    //     }, index * 500)
-    //   })
-
-    //   // Сбрасываем анимацию через 2 секунды (время 3 анимаций + зазор)
-    //   setTimeout(() => {
-    //     boxes.forEach((box) => {
-    //       box.style.animation = "none" // Сброс анимации для повторного запуска
-    //     })
-    //     startAnimation() // Перезапуск анимации
-    //   }, boxes.length * 500 + 500) // Время, через которое анимация будет сброшена и запущена снова
-    // }
 
     function main() {
       const boxes = document.querySelectorAll(".box")
@@ -246,13 +229,17 @@
 
     // Автоматически запускаем анимацию при загрузке страницы
     window.onload = main
-    // Показать кнопку назад
+
+
+
+
+    // // Показать кнопку назад
     // Telegram.WebApp.BackButton.show();
 
     // // Отслеживать нажатие на кнопку назад
     // Telegram.WebApp.BackButton.onClick(() => {
     //   // Переход на предыдущую страницу
-    //   window.location.href = SITE_URL;
+    //   window.open(SITE_URL)
     // });
 
     // // Установить текст для кнопки назад (опционально)
