@@ -1,38 +1,42 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CHOP-CHOP</title>
+
+    <!-- Telegram Web App API -->
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Styles -->
     <style>
-      body {
-        font-family: "Open Sans", sans-serif;
-        background-color: #ddb180;
-        padding: 0;
-        margin: 0;
-        height: 100vh;
-        overflow-y: hidden;
-      }
       @font-face {
         font-family: "blisspro-medium";
         src: url("blisspro-medium.otf");
       }
+
       @font-face {
         font-family: "Reforma Grotesk Demi";
         src: url("Reforma Grotesk Demi.otf");
       }
-      .colorful {
-        color: #c05d00;
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #ddb180;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
       }
-      .logo {
-        max-width: 60vw;
-      }
+
       .container {
         display: flex;
         flex-direction: column;
@@ -40,77 +44,63 @@
         justify-content: space-around;
         min-height: 100vh;
       }
-      .book {
-        border: 0px;
-        border-radius: 100px;
-        padding: 20px;
-      }
-      button {
-        text-decoration: none;
-        font-size: 28px;
-        transition: 0.2s ease;
-        font-family: "Reforma Grotesk Demi", sans-serif;
-        letter-spacing: 1px;
-        color: white;
-
-        /* font-weight: bold; */
-      }
-      button:active {
-        transform: scale(0.92);
-      }
-      a {
-        margin-top: 26px;
-        transition: 0.2s ease;
-      }
-      a:active,
-      a:hover {
-        transform: scale(0.92);
-      }
-      .heading {
-        font-family: "Reforma Grotesk Demi", sans-serif;
-
-        font-size: 40px;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        color: white;
-        text-align: center;
-      }
-      .mb {
-        margin-bottom: 20px;
-      }
-      .name-img {
-        max-width: 80vw;
-      }
-      .buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px 20px 0;
-        * {
-          width: 100%;
-        }
-      }
-      .video {
-        height: 150px;
-      }
-
-      .box {
-        opacity: 0;
-        transform: scale(0.8);
-      }
 
       .logo-container {
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        align-items: center;
         transform: scale(1.25);
         z-index: 9999;
         padding-top: 50%;
       }
 
+      .name-img {
+        max-width: 80vw;
+      }
+
       .part2 {
         transform: scale(0.2);
         opacity: 0;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 40px 0;
+        width: 100%;
+      }
+
+      .book {
+        border: none;
+        border-radius: 100px;
+        padding: 20px;
+        font-size: 28px;
+        font-family: "Reforma Grotesk Demi", sans-serif;
+        letter-spacing: 1px;
+        color: white;
+        transition: 0.2s ease;
+      }
+
+      button:active {
+        transform: scale(0.92);
+      }
+
+      a {
+        margin-top: 26px;
+        transition: 0.2s ease;
+        width: 100%;
+      }
+
+      a:hover,
+      a:active {
+        transform: scale(0.92);
+      }
+
+      .box {
+        opacity: 0;
+        transform: scale(0.8);
+        width: 100%;
       }
 
       .black-button {
@@ -125,24 +115,38 @@
         background-color: #f3ecdd;
         color: #2a282c;
       }
+
       .btns-and-thing {
         display: flex;
-        align-items: end;
+        align-items: flex-end;
       }
+
       .barbershop-thing {
         max-width: 135px;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s ease;
       }
     </style>
   </head>
+
   <body>
     <div class="container">
-      <!-- <span class="heading">Мужская парикмахерская CHOP-CHOP</span> -->
       <div class="logo-container" id="logo">
-        <img class="name-img part1" id="part1" src="Chop-Chop-Logo_RUS_White-01 1 part.png" alt="" />
-        <img class="name-img part2" id="part2" src="Chop-Chop-Logo_RUS_White-01 2 part.png" alt="" />
+        <img
+          class="name-img part1"
+          id="part1"
+          src="Chop-Chop-Logo_RUS_White-01 1 part.png"
+          alt="Chop-Chop logo part 1"
+        />
+        <img
+          class="name-img part2"
+          id="part2"
+          src="Chop-Chop-Logo_RUS_White-01 2 part.png"
+          alt="Chop-Chop logo part 2"
+        />
       </div>
-      <!-- <video src="эск1.mp4" loop autoplay class="video"></video> -->
-      <!-- <img class="logo" src="./logo-photoaidcom-cropped.jpg" alt="" /> -->
+
       <div class="btns-and-thing">
         <div class="buttons">
           <a href="https://n1295303.yclients.com">
@@ -153,86 +157,75 @@
             <button class="box box2 book grey-button">МУЖСКОЙ МАНИКЮР</button>
           </a>
 
-          <a href="https://o608.yclients.com/loyalty" class="mb">
+          <a href="https://o608.yclients.com/loyalty">
             <button class="box box3 book white-button">ПОДАРОЧНЫЕ КАРТЫ</button>
           </a>
         </div>
+
         <div>
-          <img class="barbershop-thing" src="./barbershop-thing.png" alt="" />
+          <img class="barbershop-thing" src="./barbershop-thing.png" alt="Barbershop thing" />
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    const SITE_URL = "https://chop-chop.website.yandexcloud.net"
 
-    function main() {
-      const boxes = document.querySelectorAll(".box")
-      const logoContainer = document.getElementById("logo")
-      const logoPart1 = document.getElementById("part1")
-      const logoPart2 = document.getElementById("part2")
+    <script>
+      const SITE_URL = "https://chop-chop.website.yandexcloud.net"
 
-      // boxes.forEach((box, index) => {
-      //   setTimeout(() => {
-      //     box.style.animation = "fadeIn 0.5s forwards"
-      //   }, index * 500)
-      // })
+      function main() {
+        const boxes = document.querySelectorAll(".box")
+        const logoContainer = document.getElementById("logo")
+        const logoPart2 = document.getElementById("part2")
 
-      function startupLogoPart2Animation() {
-        logoPart2.style.transition = "all 0.4s ease"
-        logoPart2.style.transform = "scale(1)"
-        logoPart2.style.opacity = "1"
-      }
-
-      function startupLogoAnimation() {
-        logoContainer.style.transition = "all 1.1s ease"
-        logoContainer.style.transform = "scale(1)"
-        logoContainer.style.paddingTop = "0"
-      }
-
-      function startupButtonsAnimation() {
-        for (let i = 0; i < boxes.length; i++) {
-          const box = boxes[i]
-          box.style.transform = "scale(1)"
-          box.style.opacity = "1"
+        function startupLogoPart2Animation() {
+          logoPart2.style.transition = "all 0.4s ease"
+          logoPart2.style.transform = "scale(1)"
+          logoPart2.style.opacity = "1"
         }
+
+        function startupLogoAnimation() {
+          logoContainer.style.transition = "all 1.1s ease"
+          logoContainer.style.transform = "scale(1)"
+          logoContainer.style.paddingTop = "0"
+        }
+
+        function startupButtonsAnimation() {
+          boxes.forEach((box) => {
+            box.style.transform = "scale(1)"
+            box.style.opacity = "1"
+          })
+
+          const barbershopThing = document.querySelector(".barbershop-thing")
+          if (barbershopThing) {
+            barbershopThing.style.transform = "scale(1)"
+            barbershopThing.style.opacity = "1"
+          }
+        }
+
+        let currentIndex = 0
+        function animateBox() {
+          const box = boxes[currentIndex]
+
+          box.style.transform = "scale(0.85)"
+          setTimeout(() => {
+            box.style.transform = "scale(1)"
+            currentIndex = (currentIndex + 1) % boxes.length
+            setTimeout(animateBox, 2000)
+          }, 150)
+        }
+
+        startupLogoPart2Animation()
+        setTimeout(startupLogoAnimation, 1200)
+        setTimeout(startupButtonsAnimation, 1600)
+        setTimeout(animateBox, 4800)
       }
 
-      let currentIndex = 0
+      window.onload = main
 
-      function animateBox() {
-        const box = boxes[currentIndex]
-
-        box.style.transform = "scale(0.85)" // Уменьшение размера блока
-
-        setTimeout(() => {
-          box.style.transform = "scale(1)" // Увеличение размера блока обратно
-
-          currentIndex = (currentIndex + 1) % boxes.length // Переход на следующий блок
-
-          setTimeout(animateBox, 2000) // Задержка перед анимацией следующего блока
-        }, 150) // Время удержания уменьшенного состояния
-      }
-
-      startupLogoPart2Animation()
-      setTimeout(startupLogoAnimation, 1200) // 1000 ms
-      setTimeout(startupButtonsAnimation, 1600) // 3000 ms
-      setTimeout(animateBox, 2200 + 3000)
-    }
-
-    // Автоматически запускаем анимацию при загрузке страницы
-    window.onload = main
-
-    // // Показать кнопку назад
-    // Telegram.WebApp.BackButton.show();
-
-    // // Отслеживать нажатие на кнопку назад
-    // Telegram.WebApp.BackButton.onClick(() => {
-    //   // Переход на предыдущую страницу
-    //   window.open(SITE_URL)
-    // });
-
-    // // Установить текст для кнопки назад (опционально)
-    // Telegram.WebApp.BackButton.text = "Назад";
-  </script>
+      // Telegram back button (если решишь включить)
+      // Telegram.WebApp.BackButton.show();
+      // Telegram.WebApp.BackButton.onClick(() => {
+      //   window.open(SITE_URL);
+      // });
+    </script>
+  </body>
 </html>
