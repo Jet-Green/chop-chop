@@ -64,7 +64,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0 20px 40px 0;
+        padding: 0 20px 40px 20px;
         width: 100%;
       }
 
@@ -72,7 +72,7 @@
         border: none;
         border-radius: 100px;
         padding: 20px;
-        font-size: 28px;
+        font-size: clamp(1.5rem, 1.3125rem + 1.25vw, 1.75rem);
         font-family: "Reforma Grotesk Demi", sans-serif;
         letter-spacing: 1px;
         color: white;
@@ -119,7 +119,7 @@
       }
 
       .barbershop-thing {
-        max-width: 125px;
+        max-width: 120px;
         transform: scale(0.8);
         opacity: 0;
         transition: all 0.3s ease;
